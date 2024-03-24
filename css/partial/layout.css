@@ -1,0 +1,18 @@
+/* 默认情况下，照片宽度为50% */
+img {
+  width: 50%;
+}
+/* 在手机设备上，照片宽度为100% */
+@media only screen and (max-width: 600px) {
+  img {
+    width: 100%;
+  }
+}
+html {
+  width: 80%;
+}
+@media only screen and (max-width: 600px) {
+  html {
+    width: 100%;
+  }
+}

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+    <title>git回退本地分支与远程仓库 - Yixiao.Org</title>
+  <!-- 
+<link rel="stylesheet" href="/css/style.css">
+ -->
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+    <div class="body-container">
+        <div class="header-wrapper"><style>
+
+    .categories-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+.category-item {
+    margin-right: 10px; /* 添加一些右边距，使分类之间有一些空间 */
+}
+    </style>
+
+<header>
+<a href="/" >Yixiao.Org</a>
+<a href="/about.html" >About</a>
+<a href="/equipment.html" >我的装备</a>
+<hr>
+<div class="categories-list">
+    分类：
+    
+    
+        <div class="category-item">
+            <a href="/categories/edu/">学习</a> (2)
+        </div>
+    
+        <div class="category-item">
+            <a href="/categories/it/">技术</a> (9)
+        </div>
+    
+        <div class="category-item">
+            <a href="/categories/life/">生活</a> (2)
+        </div>
+    
+        <div class="category-item">
+            <a href="/categories/default/">默认分类</a> (1)
+        </div>
+    
+</div>
+<hr>
+</header>
+</div>
+        <div class="main-wrapper"><main>
+    <div class="main-container">
+        <div class="post-details">
+            
+            <div class="post-title">
+                <h1>git回退本地分支与远程仓库</h1>
+            </div>
+            <div class="post-meta">
+                <i class="fa-solid fa-clock"></i>&nbsp;<span class="post-date">2024/02/07</span>
+            </div>
+            
+            <div class="post-content">
+                <h2 id="本地分支回退"><a href="#本地分支回退" class="headerlink" title="本地分支回退"></a>本地分支回退</h2><p>先用下面命令找到要回退的版本的commit id：<br><code>git log --oneline</code> </p>
+<p><strong>要退出 <code>git log</code> 命令的输出，可以按下键盘上的 “q” 键</strong></p>
+<p>接着回退版本:<br><code>git reset 3e47f0a --hard</code><br>3e47f0a就是你要回退的版本的commit id</p>
+<h2 id="远程仓库回退"><a href="#远程仓库回退" class="headerlink" title="远程仓库回退"></a>远程仓库回退</h2><p>先进行本地回退<br>然后强制推送到远程分支：</p>
+<p><code>git push -f</code></p>
+
+            </div>
+        </div>
+    </div>
+    <br>
+    <script src="https://giscus.app/client.js"
+    data-repo="YixiaoOrg/blog_giscus"
+    data-repo-id="R_kgDOLhHYLw"
+    data-category="Announcements"
+    data-category-id="DIC_kwDOLhHYL84CeA0h"
+    data-mapping="url"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="preferred_color_scheme"
+    data-lang="zh-CN"
+    crossorigin="anonymous"
+    async>
+</script>
+</main></div>
+        <div class="footer-wrapper"><footer>
+
+    <br>
+<a href="https://github.com/YixiaoOrg" target="_blank" rel="me noopener noreffer">GitHub</a>
+<a href="https://twitter.com/YixiaoOrg" target="_blank" rel="me noopener noreffer">X</a><br>
+ Contact me at <a alt="发邮件我吧！" href="mailto:&#x0068;&#x0069;&#x0040;&#x0079;&#x0069;&#x0078;&#x0069;&#x0061;&#x006f;&#x002e;&#x006f;&#x0072;&#x0067;">&#x0068;&#x0069;&#x0040;&#x0079;&#x0069;&#x0078;&#x0069;&#x0061;&#x006f;&#x002e;&#x006f;&#x0072;&#x0067;</a>.
+<br>
+<span id="busuanzi_container_site_pv" style='display:none'>
+本站总访问量<span id="busuanzi_value_site_pv"></span>次
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+</footer>
+</div>
+    </div>
+</body>
+</html>

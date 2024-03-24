@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+    <title>chatgpt-demo部署教程 - Yixiao.Org</title>
+  <!-- 
+<link rel="stylesheet" href="/css/style.css">
+ -->
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+    <div class="body-container">
+        <div class="header-wrapper"><style>
+
+    .categories-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+.category-item {
+    margin-right: 10px; /* 添加一些右边距，使分类之间有一些空间 */
+}
+    </style>
+
+<header>
+<a href="/" >Yixiao.Org</a>
+<a href="/about.html" >About</a>
+<a href="/equipment.html" >我的装备</a>
+<hr>
+<div class="categories-list">
+    分类：
+    
+    
+        <div class="category-item">
+            <a href="/categories/edu/">学习</a> (2)
+        </div>
+    
+        <div class="category-item">
+            <a href="/categories/it/">技术</a> (9)
+        </div>
+    
+        <div class="category-item">
+            <a href="/categories/life/">生活</a> (2)
+        </div>
+    
+        <div class="category-item">
+            <a href="/categories/default/">默认分类</a> (1)
+        </div>
+    
+</div>
+<hr>
+</header>
+</div>
+        <div class="main-wrapper"><main>
+    <div class="main-container">
+        <div class="post-details">
+            
+            <div class="post-title">
+                <h1>chatgpt-demo部署教程</h1>
+            </div>
+            <div class="post-meta">
+                <i class="fa-solid fa-clock"></i>&nbsp;<span class="post-date">2024/01/07</span>
+            </div>
+            
+            <div class="post-content">
+                <p>在去年3月时基于<a target="_blank" rel="noopener" href="https://github.com/anse-app/chatgpt-demo" title="@anse-app/chatgpt-demo">@anse-app&#x2F;chatgpt-demo</a> 项目搭建了<a target="_blank" rel="noopener" href="https://chat.panyixiao.com/" title="chat.panyixiao.com">chat.panyixiao.com</a>,非常稳定，非常易用，推荐用此项目搭建chatgpt给自己或家人使用</p>
+<blockquote>
+<p>如果你不用改变项目的默认样式（比如在网站中加几个字之类），可以直接点击<a target="_blank" rel="noopener" href="https://vercel.com/new/clone?repository-url=https://github.com/ddiu8081/chatgpt-demo&env=OPENAI_API_KEY&envDescription=OpenAI%20API%20Key&envLink=https://platform.openai.com/account/api-keys">Deploy with Vercel</a>然后直接看第3步配置配置环境变量即可</p>
+</blockquote>
+<p>1.Fork此项目 <a target="_blank" rel="noopener" href="https://github.com/anse-app/chatgpt-demo" title="@anse-app/chatgpt-demo">@anse-app&#x2F;chatgpt-demo</a><br><img src="https://hkcdn.yixiao.org/typecho/2024/01/07/1.png?x-oss-process=style/sy" alt="1.png"><br>点击Fork,下一页全部默认 ，点击 <strong>Create fork</strong></p>
+<p>2.部署到 <a target="_blank" rel="noopener" href="https://vercel.com/" title="Vercel">Vercel</a></p>
+<p>使用GitHub注册vercel<br>点击 Add New -Project<img src="https://hkcdn.yixiao.org/typecho/2024/01/07/1704634543.png?x-oss-process=style/sy" alt="1704634543.png"></p>
+<p>选择你 fork 完成的项目，点击Import<br><img src="https://hkcdn.yixiao.org/typecho/2024/01/07/1704634636.png?x-oss-process=style/sy" alt="1704634636.png"></p>
+<p>3.配置环境变量 Environment Variables<br>类似于这样<br><img src="https://hkcdn.yixiao.org/typecho/2024/01/07/1704634867.png?x-oss-process=style/sy" alt="1704634867.png"></p>
+<p>然后点击Deploy即可</p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>描述</th>
+<th>默认</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>OPENAI_API_KEY</code></td>
+<td>你的 OpenAI API Key <strong>必填</strong></td>
+<td><code>null</code></td>
+</tr>
+<tr>
+<td><code>HTTPS_PROXY</code></td>
+<td>为 OpenAI API 提供代理。e.g. <code>http://127.0.0.1:7890</code></td>
+<td><code>null</code></td>
+</tr>
+<tr>
+<td><code>OPENAI_API_BASE_URL</code></td>
+<td>请求 OpenAI API 的自定义 Base URL. <strong>如使用第三方api，则必填</strong></td>
+<td><code>https://api.openai.com</code></td>
+</tr>
+<tr>
+<td><code>HEAD_SCRIPTS</code></td>
+<td>在页面的 <code>&lt;/head&gt;</code> 之前注入分析或其他脚本</td>
+<td><code>null</code></td>
+</tr>
+<tr>
+<td><code>PUBLIC_SECRET_KEY</code></td>
+<td>项目的秘密字符串。用于生成 API 调用的签名</td>
+<td><code>null</code></td>
+</tr>
+<tr>
+<td><code>SITE_PASSWORD</code></td>
+<td>为网站设置密码，支持使用英文逗号创建多个密码。如果未设置，则该网站将是公开的</td>
+<td><code>null</code></td>
+</tr>
+<tr>
+<td><code>OPENAI_API_MODEL</code></td>
+<td>使用的 OpenAI 模型。<a target="_blank" rel="noopener" href="https://platform.openai.com/docs/api-reference/models/list">模型列表</a></td>
+<td><code>gpt-3.5-turbo</code></td>
+</tr>
+</tbody></table>
+<p>4.对中国大陆用户的特别解释<br>由于OpenAi api在中国大陆较难付款，所以通常使用第三方api ，我所使用的是<a target="_blank" rel="noopener" href="https://api2d.com/" title="api2d">api2d</a>，与原版的区别仅仅是需要替换OPENAI_API_BASE_URL 和OPENAI_API_KEY 这么简单</p>
+
+            </div>
+        </div>
+    </div>
+    <br>
+    <script src="https://giscus.app/client.js"
+    data-repo="YixiaoOrg/blog_giscus"
+    data-repo-id="R_kgDOLhHYLw"
+    data-category="Announcements"
+    data-category-id="DIC_kwDOLhHYL84CeA0h"
+    data-mapping="url"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="preferred_color_scheme"
+    data-lang="zh-CN"
+    crossorigin="anonymous"
+    async>
+</script>
+</main></div>
+        <div class="footer-wrapper"><footer>
+
+    <br>
+<a href="https://github.com/YixiaoOrg" target="_blank" rel="me noopener noreffer">GitHub</a>
+<a href="https://twitter.com/YixiaoOrg" target="_blank" rel="me noopener noreffer">X</a><br>
+ Contact me at <a alt="发邮件我吧！" href="mailto:&#x0068;&#x0069;&#x0040;&#x0079;&#x0069;&#x0078;&#x0069;&#x0061;&#x006f;&#x002e;&#x006f;&#x0072;&#x0067;">&#x0068;&#x0069;&#x0040;&#x0079;&#x0069;&#x0078;&#x0069;&#x0061;&#x006f;&#x002e;&#x006f;&#x0072;&#x0067;</a>.
+<br>
+<span id="busuanzi_container_site_pv" style='display:none'>
+本站总访问量<span id="busuanzi_value_site_pv"></span>次
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+</footer>
+</div>
+    </div>
+</body>
+</html>

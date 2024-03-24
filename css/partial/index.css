@@ -1,0 +1,10 @@
+.main-container {
+  display: flex;
+}
+.post-item {
+  width: 100%;
+  text-align: left;
+}
+.post-item:not(:last-child) {
+  margin-bottom: 5px;
+}

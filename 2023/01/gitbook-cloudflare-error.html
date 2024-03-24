@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+    <title>Gitbook 和 Cloudflare 之间的兼容性错误 - Yixiao.Org</title>
+  <!-- 
+<link rel="stylesheet" href="/css/style.css">
+ -->
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+    <div class="body-container">
+        <div class="header-wrapper"><style>
+
+    .categories-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+.category-item {
+    margin-right: 10px; /* 添加一些右边距，使分类之间有一些空间 */
+}
+    </style>
+
+<header>
+<a href="/" >Yixiao.Org</a>
+<a href="/about.html" >About</a>
+<a href="/equipment.html" >我的装备</a>
+<hr>
+<div class="categories-list">
+    分类：
+    
+    
+        <div class="category-item">
+            <a href="/categories/edu/">学习</a> (2)
+        </div>
+    
+        <div class="category-item">
+            <a href="/categories/it/">技术</a> (9)
+        </div>
+    
+        <div class="category-item">
+            <a href="/categories/life/">生活</a> (2)
+        </div>
+    
+        <div class="category-item">
+            <a href="/categories/default/">默认分类</a> (1)
+        </div>
+    
+</div>
+<hr>
+</header>
+</div>
+        <div class="main-wrapper"><main>
+    <div class="main-container">
+        <div class="post-details">
+            
+            <div class="post-title">
+                <h1>Gitbook 和 Cloudflare 之间的兼容性错误</h1>
+            </div>
+            <div class="post-meta">
+                <i class="fa-solid fa-clock"></i>&nbsp;<span class="post-date">2023/01/31</span>
+            </div>
+            
+            <div class="post-content">
+                <p><img src="https://hkcdn.yixiao.org/typecho/2023/10/19/1697675972.png?x-oss-process=style/sy" alt="1697675972.png"><br>之前使用 Gitbook 绑定自定义域名 read.yixiao.org 做了一篇文档，域名是托管在 Cloudflare 的，使用 CNAME 的方式接入 gitbook，后来不使用 gitbook，改变 CNAME 解析，解析到我自己的服务器，同时开启 Cloudflare 的 CDN，但是访问 read,yixiao.org 依然跳转到 gitbook，一开始我以为是因为 DNS 缓存，但是我等待了 24 个小时，依然如此。</p>
+<p> 与<a target="_blank" rel="noopener" href="https://community.cloudflare.com/t/dns-updates-issues-with-cloudflare-partners-like-gitbook/341449">这个情况一样</a>.</p>
+<h2 id="尝试解决"><a href="#尝试解决" class="headerlink" title="尝试解决"></a>尝试解决</h2><p>我想了很多办法，重置 DNS，删除 Cloudflare 缓存，但都无法解决</p>
+<h2 id="联系官方"><a href="#联系官方" class="headerlink" title="联系官方"></a>联系官方</h2><p>我尝试联系 Cloudflare，但可惜我是 Free 套餐，无法发工单，所以我无法联系到 Cloudflare 官方</p>
+<p>之后在 GitHub 上<a target="_blank" rel="noopener" href="https://github.com/GitbookIO/community/discussions/52">联系了</a> Gitbook 同时发邮件给 Gitbook，一天之后得到回复和解决。</p>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>是 Gitbook 从 Cloudflare 中删除了我的域名，之后就可以了</p>
+<h3 id="以下为解释原文"><a href="#以下为解释原文" class="headerlink" title="以下为解释原文"></a>以下为解释原文</h3><blockquote>
+<p>Sorry for the trouble. I just wanted to give some additional context on this specific issue as it has been a recurring problem that we are aware of but sadly cannot be easily resolved.</p>
+<p>TL;DR: To regain complete control of your custom hostname after it has been registered on app.gitbook.com, remove this custom hostname from our platform.</p>
+<p>For the longer explanation:<br>We use Cloudflare to serve HTTPS traffic for all custom hostnames configured by our users.</p>
+<p>When a user configures a custom hostname, they point their DNS via CNAME to one of our domains (which, at the end of the chain points to Cloudflare). We then request Cloudflare (using their Cloudflare for SaaS product) to generate an SSL certificate for this hostname and serve the traffic properly.</p>
+<p>When users move away from GitBook, they often don’t remove their content from GitBook and only change the DNS on their side. We don’t request to remove the hostname from Cloudflare for SaaS until the content is deleted from GitBook, as the goal is to avoid breaking links for URLs that are still pointing to GitBook.</p>
+<p>We’d expect Cloudflare to always use the DNS setup of the domain as the primary factor for deciding where to route the traffic.</p>
+<p>We don’t know the rationale behind why Cloudflare routing continues internally routing the traffic to GitBook when the domain is no longer pointing to the GitBook hostname. But it is not us doing that intentionally.</p>
+</blockquote>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>这似乎是 Cloudflare 的问题，看<a target="_blank" rel="noopener" href="https://news.ycombinator.com/item?id=33715575">一些帖子</a>，官方计划去年 12 月解决该问题</p>
+<blockquote>
+<p>simon-cf(I work at Cloudflare):We are going to change the way this works so that the authoritative DNS dictates the behaviour, rather than the internal state where we currently require SSL for SaaS providers to manage off-boarding of their own customers. This work has been planned for some time and we’re very pleased it will be done soon!</p>
+<p>Current ETA for this is December.</p>
+</blockquote>
+<p>但是至少目前并没有解决，希望尽快解决，这给我带来了很大的困扰。。。。</p>
+
+            </div>
+        </div>
+    </div>
+    <br>
+    <script src="https://giscus.app/client.js"
+    data-repo="YixiaoOrg/blog_giscus"
+    data-repo-id="R_kgDOLhHYLw"
+    data-category="Announcements"
+    data-category-id="DIC_kwDOLhHYL84CeA0h"
+    data-mapping="url"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="preferred_color_scheme"
+    data-lang="zh-CN"
+    crossorigin="anonymous"
+    async>
+</script>
+</main></div>
+        <div class="footer-wrapper"><footer>
+
+    <br>
+<a href="https://github.com/YixiaoOrg" target="_blank" rel="me noopener noreffer">GitHub</a>
+<a href="https://twitter.com/YixiaoOrg" target="_blank" rel="me noopener noreffer">X</a><br>
+ Contact me at <a alt="发邮件我吧！" href="mailto:&#x0068;&#x0069;&#x0040;&#x0079;&#x0069;&#x0078;&#x0069;&#x0061;&#x006f;&#x002e;&#x006f;&#x0072;&#x0067;">&#x0068;&#x0069;&#x0040;&#x0079;&#x0069;&#x0078;&#x0069;&#x0061;&#x006f;&#x002e;&#x006f;&#x0072;&#x0067;</a>.
+<br>
+<span id="busuanzi_container_site_pv" style='display:none'>
+本站总访问量<span id="busuanzi_value_site_pv"></span>次
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+</footer>
+</div>
+    </div>
+</body>
+</html>
