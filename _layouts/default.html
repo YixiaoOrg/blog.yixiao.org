@@ -1,19 +1,57 @@
 <!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>{{ page.title }}</title>
+<style>
+    /* 默认情况下，照片宽度为50% */
+    img {
+      width: 50%;
+    }
 
-　　<html>
+    /* 在手机设备上，照片宽度为100% */
+    @media only screen and (max-width: 600px) {
+      img {
+        width: 100%;
+      }
+    }
 
-　　<head>
+    pre {
+    font-size: 17px;
+}
+code {
+  background-color: #eee;
+  border-radius: 3px;
+  font-family: courier, monospace;
+  padding: 0 3px;
+}
+table {
+  border-collapse: collapse;
+  border: 2px solid rgb(140 140 140);
+}
+th,
+td {
+  border: 1px solid rgb(160 160 160);
+}
 
-　　　　<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+html{
+      width: 80%;
+      font-size: 17px;
+     
 
-　　　　<title>{{ page.title }}</title>
+    }
 
-　　</head>
+    
+    @media only screen and (max-width: 600px) {
+      html{
+        width: 100%;
+      }
+    }
 
-　　<body>
+</style>
+</head>
+<body>
 
-　　　　{{ content }}
-
-　　</body>
-
-　　</html>
+{{ content }}
+</body>
+</html>
