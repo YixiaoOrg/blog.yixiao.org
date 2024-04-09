@@ -4,6 +4,7 @@
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <meta name="renderer" content="webkit">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+<link rel="stylesheet" href="github-markdown-light.css">
 <title>{{ page.title }} - Yixiao.Org</title>
 <style>
     /* 默认情况下，照片宽度为50% */
@@ -42,9 +43,12 @@ html{
 {% endif %}
 
 <h2>{{page.title}}</h2>
+<div class="markdown-body">
 {{ page.date | date: "%Y-%m-%d" }}
 {{ content }}
+</div>
 {% if page.id %}
+
 <br>
 <script src="https://giscus.app/client.js"
 data-repo="YixiaoOrg/blog_giscus"
