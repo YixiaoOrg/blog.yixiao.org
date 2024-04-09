@@ -12,7 +12,9 @@ categories:
 > 如果你不用改变项目的默认样式（比如在网站中加几个字之类），可以直接点击[Deploy with Vercel](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fddiu8081%2Fchatgpt-demo&env=OPENAI_API_KEY&envDescription=OpenAI%20API%20Key&envLink=https%3A%2F%2Fplatform.openai.com%2Faccount%2Fapi-keys)然后直接看第3步配置配置环境变量即可
 
 1.Fork此项目 [@anse-app/chatgpt-demo](https://github.com/anse-app/chatgpt-demo "@anse-app/chatgpt-demo")
+
 ![1.png](https://hkcdn.yixiao.org/typecho/2024/01/07/1.png?x-oss-process=style/sy)
+
 点击Fork,下一页全部默认 ，点击 **Create fork**
 
 
@@ -20,13 +22,17 @@ categories:
 2.部署到 [Vercel](https://vercel.com/ "Vercel")
 
 使用GitHub注册vercel
-点击 Add New -Project![1704634543.png](https://hkcdn.yixiao.org/typecho/2024/01/07/1704634543.png?x-oss-process=style/sy)
+点击 Add New -Project
+
+![1704634543.png](https://hkcdn.yixiao.org/typecho/2024/01/07/1704634543.png?x-oss-process=style/sy)
 
 选择你 fork 完成的项目，点击Import
+
 ![1704634636.png](https://hkcdn.yixiao.org/typecho/2024/01/07/1704634636.png?x-oss-process=style/sy)
 
 3.配置环境变量 Environment Variables
 类似于这样
+
 ![1704634867.png](https://hkcdn.yixiao.org/typecho/2024/01/07/1704634867.png?x-oss-process=style/sy)
 
 然后点击Deploy即可
