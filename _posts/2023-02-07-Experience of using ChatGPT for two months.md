@@ -30,8 +30,11 @@ However, the coding capability of ChatGPT has exceeded my expectations. I repeat
 Secondly, its contextual semantic coherence is also outstanding.
 
 ![1697983486.png](https://hkcdn.yixiao.org/typecho/2023/10/22/1697983486.png?x-oss-process=style/sy)
+
 I have relied on ChatGPT to solve some questions that I couldn't find answers to anywhere else on the internet.
+
 ![1697983527.png](https://hkcdn.yixiao.org/typecho/2023/10/22/1697983527.png?x-oss-process=style/sy)
+
 Most importantly, the language organization ability of ChatGPT is remarkably impressive. Although sometimes the sentences may appear fluent and impressive, in reality, they may not make much sense. It's like a generator of empty words, although not just any ordinary one, as the statements are coherent and not just repetitive phrases.
 
 It can be used for generating emails, and indeed, some people have already done so.

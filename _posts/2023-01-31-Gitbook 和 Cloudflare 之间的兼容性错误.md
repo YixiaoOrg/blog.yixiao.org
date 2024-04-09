@@ -8,6 +8,7 @@ categories:
 ---
 
 ![1697675972.png](https://hkcdn.yixiao.org/typecho/2023/10/19/1697675972.png?x-oss-process=style/sy)
+
 之前使用 Gitbook 绑定自定义域名 read.yixiao.org 做了一篇文档，域名是托管在 Cloudflare 的，使用 CNAME 的方式接入 gitbook，后来不使用 gitbook，改变 CNAME 解析，解析到我自己的服务器，同时开启 Cloudflare 的 CDN，但是访问 read,yixiao.org 依然跳转到 gitbook，一开始我以为是因为 DNS 缓存，但是我等待了 24 个小时，依然如此。
 
  与[这个情况一样](https://community.cloudflare.com/t/dns-updates-issues-with-cloudflare-partners-like-gitbook/341449).
