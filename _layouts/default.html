@@ -44,7 +44,10 @@ html{
 
 <h2>{{page.title}}</h2>
 {{ page.date | date: "%Y-%m-%d" }}
+
+<div id="markdown">
 {{ content }}
+</div>
 {% if page.id %}
 <br>
 <script src="https://giscus.app/client.js"
