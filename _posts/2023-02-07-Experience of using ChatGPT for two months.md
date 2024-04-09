@@ -19,6 +19,7 @@ I also encountered difficulties and had to overcome several obstacles, such as u
 <!-- more -->
 
 First and foremost, what surprised me the most was the excellent support for the Chinese language in ChatGPT. In comparison to some other products I have used before, the difference is truly remarkable.
+
 ![1697983365.png](https://hkcdn.yixiao.org/typecho/2023/10/22/1697983365.png?x-oss-process=style/sy)
 
 I first tested the encoding capability of ChatGPT.
