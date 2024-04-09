@@ -40,11 +40,12 @@ html{
 <body>
 {% if page.id %}
 <h2><a href="/">Yixiao.Org's Blog</a></h2>
-{% endif %}
 
-<h2>{{page.title}}</h2>
+
+<h2 style="display:inline;">{{page.title}}</h2>{{ page.date | date: "%Y-%m-%d" }}
+{% endif %}
 <div class="markdown-body">
-{{ page.date | date: "%Y-%m-%d" }}
+
 {{ content }}
 </div>
 {% if page.id %}
