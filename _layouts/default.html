@@ -5,7 +5,12 @@
 <meta name="renderer" content="webkit">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
 <link rel="stylesheet" href="https://blog.yixiao.org/github-markdown-light.css">
+{% if page.url == "/" %}
+<title>Yixiao.Org's Blog</title>
+{% endif %}
+{% if page.id %}
 <title>{{ page.title }} - Yixiao.Org</title>
+{% endif %}
 <style>
     /* 默认情况下，照片宽度为50% */
     img {
