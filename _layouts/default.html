@@ -57,6 +57,7 @@ html{
 <h2><a href="/">Yixiao.Org's Blog</a></h2>
 {% endif %}
 <h2>{{page.title}}</h2>
+{{ page.date | date: "%Y-%m-%d" }}
 
 {{ content }}
 {% if page.id %}
