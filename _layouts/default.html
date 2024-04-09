@@ -38,6 +38,9 @@ html{
 </style>
 </head>
 <body>
+  {% if page.url == "/" %}
+  <h2>Yixiao.Org's Blog</h2>
+  {% endif %}
 {% if page.id %}
 <h2><a href="/">Yixiao.Org's Blog</a></h2>
 
