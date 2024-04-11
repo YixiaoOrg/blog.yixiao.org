@@ -1,7 +1,7 @@
 ---
 layout: default
 date: 2024/04/11
-title: Apple Developer.p12与.mobileprovision生成
+title: Apple Developer .p12 与 .mobileprovision 生成
 permalink: /2024/04/p12mobileprovision.html
 categories:
   - 技术
