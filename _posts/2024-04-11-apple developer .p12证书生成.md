@@ -71,7 +71,7 @@ Apple Developer网站点击`Devices` 点击`+`
 
 Device Name随便填写
 
-UUID的获取教程，另行搜索，或使用 [蒲公英 | 一步快速获取 iOS 设备的UDID](https://www.pgyer.com/tools/udid)  获取
+UUID的获取教程，另行搜索，或使用 [蒲公英 一步快速获取 iOS 设备的UDID](https://www.pgyer.com/tools/udid)  获取
 
 ## 申请描述文件 .mobileprovision
 
