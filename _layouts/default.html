@@ -42,6 +42,18 @@ html{
     }
 
 </style>
+<script type="text/javascript">
+  $(document).ready(function() {
+    //为域名不包含'yixiao.org'的超链接加上target='_blank'属性
+    $('a[href^="http"]').each(function() {
+        var href = $(this).attr('href');
+        if(href.indexOf('yixiao.org') === -1) {
+            $(this).attr('target', '_blank');
+        }
+    });
+});
+
+</script>
 </head>
 <body>
   {% if page.url == "/" %}
