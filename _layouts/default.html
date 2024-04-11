@@ -15,43 +15,24 @@
 <style>
     /* 默认情况下，照片宽度为50% */
     img {
-      width: 50%;
+      width: 60%;
     }
-
     /* 在手机设备上，照片宽度为100% */
     @media only screen and (max-width: 600px) {
       img {
         width: 100%;
       }
     }
-
-
-
 html{
       width: 80%;
       font-size: 17px;
-     
-
-    }
-
-    
+    }   
     @media only screen and (max-width: 600px) {
       html{
         width: 100%;
       }
     }
-
 </style>
-<script type="text/javascript">
-  $(document).ready(function() {
-    $('a[href^="https"]').each(function() {
-        var href = $(this).attr('href');
-        if(href.indexOf('yixiao.org') === -1) {
-            $(this).attr('target', '_blank');
-        }
-    });
-});
-</script>
 </head>
 <body>
   {% if page.url == "/" %}
@@ -59,17 +40,13 @@ html{
   {% endif %}
 {% if page.id %}
 <h2><a href="/">Yixiao.Org's Blog</a></h2>
-
-
 <h1 style="display:inline;">{{page.title}}</h1> {{ page.date | date: "%Y-%m-%d" }}
 <br><br>
 {% endif %}
 <div class="markdown-body">
-
 {{ content }}
 </div>
 {% if page.id %}
-
 <br>
 <script src="https://giscus.app/client.js"
 data-repo="YixiaoOrg/blog_giscus"
@@ -95,9 +72,8 @@ async>
  Contact me at <a alt="发邮件我吧！" href="mailto:&#x0068;&#x0069;&#x0040;&#x0079;&#x0069;&#x0078;&#x0069;&#x0061;&#x006f;&#x002e;&#x006f;&#x0072;&#x0067;">&#x0068;&#x0069;&#x0040;&#x0079;&#x0069;&#x0078;&#x0069;&#x0061;&#x006f;&#x002e;&#x006f;&#x0072;&#x0067;</a>.
 <br>
 <span id="busuanzi_container_site_pv" style='display:none'>
-  Visitors:<span id="busuanzi_value_site_pv"></span>
+Visitors:<span id="busuanzi_value_site_pv"></span>
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 </footer>
-
 </body>
 </html>
