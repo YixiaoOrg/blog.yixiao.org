@@ -24,21 +24,23 @@ issues = json.loads(issues_json)
 issues = [issue for issue in issues if LABELS.intersection(set([label["name"] for label in issue["labels"]]))]
 logging.info("issues with filter: %s", issues)
 
-
 ## 3. generate articles
 for issue in issues:
     r = subprocess.check_output(f"gh issue view {issue['number']} --json title,url,author,number,labels,createdAt,updatedAt,body",
                        shell=True, timeout=TIMEOUT)
+
     issue = json.loads(r)
     logging.info("process issue: %s", issue)
     date = datetime.strptime(issue['createdAt'], "%Y-%m-%dT%H:%M:%SZ").strftime("%Y-%m-%d")
-    title = issue['title'].replace(' ', '-')
+    title, permalink = issue['title'].split('[url]')
+    title = title.replace(' ', '-')
+    permalink = permalink.replace(' ', '-')
     with open(f"{ARTICLES_DIR}/{date}-{title}.md", "w") as f:
         f.write("---\n")
         f.write(f"layout: default\n")
         f.write(f"date: {date}\n")
-        f.write(f"title: {issue['title']}\n")
-        f.write(f"permalink: /{date[:7].replace('-', '/')}/{title}.html\n")
+        f.write(f"title: {title}\n")
+        f.write(f"permalink: /{date[:7].replace('-', '/')}/{permalink}.html\n")
         f.write("---\n\n")
         f.write("\n\n")
         f.write(issue['body'])
