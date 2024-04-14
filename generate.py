@@ -33,8 +33,6 @@ for issue in issues:
     logging.info("process issue: %s", issue)
     date = datetime.strptime(issue['createdAt'], "%Y-%m-%dT%H:%M:%SZ").strftime("%Y-%m-%d")
     title, permalink = issue['title'].split('[url]')
-    title = title.replace(' ', '-')
-    permalink = permalink.replace(' ', '-')
     with open(f"{ARTICLES_DIR}/{date}-{title}.md", "w") as f:
         f.write("---\n")
         f.write(f"layout: default\n")
