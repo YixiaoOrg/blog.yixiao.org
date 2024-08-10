@@ -5,3 +5,23 @@ title: Yixiao.Org's Blog
 {% for post in site.posts %}
 {{ post.date | date: "%Y-%m-%d" }} <a style="color: #000;"href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a><br>
 {% endfor %}
+
+
+ {% for post in site.posts %}
+      
+        {% unless post.next %}
+          <h3 style="margin-bottom: 8px">{{ post.date | date: "%b-%Y" }}</h3>
+        {% else %}
+        {% capture year %}{{ post.date | date: "%b, %Y" }}{% endcapture %}
+        {% capture nyear %}{{ post.next.date | date: "%b, %Y" }}{% endcapture %}
+        
+        {% if year != nyear %}
+           <h3 style="margin-bottom: 8px">{{ post.date | date: "%b-%Y" }}</h3>
+        {% endif %}
+        {% endunless %}
+       
+       <li> 
+           <a href="{{ post.url }}" style="color: black">{{ post.date | date:"%b-%-d-%Y" }}  {{ post.title }}</a>
+       </li>
+       
+    {% endfor %}
