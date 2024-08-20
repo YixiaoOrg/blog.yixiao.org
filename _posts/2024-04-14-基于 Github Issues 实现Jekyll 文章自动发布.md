@@ -11,8 +11,8 @@ permalink: /2024/04/issue-to-Jekyll.html
 
 实现靠两个文件[main.yml](https://github.com/YixiaoOrg/blog.yixiao.org/blob/gh-pages/.github/workflows/main.yml)和[generate.py](https://github.com/YixiaoOrg/blog.yixiao.org/blob/gh-pages/generate.py)
 
-> GitHub Actions is not permitted to create or approve pull requests.
-> 报错需要去https://github.com/`[YixiaoOrg/blog.yixiao.org]`/settings/actions
+> GitHub Actions is not permitted to create or approve pull requests.   
+>报错需要去https://github.com/`[YixiaoOrg/blog.yixiao.org]`/settings/actions
 >  的最下面设置允许 GitHub Actions 创建和批准拉取请求
 >
 > ##`YixiaoOrg/blog.yixiao.org` 部分需要替换成自己的项目
