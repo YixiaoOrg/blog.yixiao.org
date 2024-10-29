@@ -7,6 +7,10 @@ permalink: /2024/08/cloudflared.html
 
 
 
+
+
+>如果没有前置软路由，即使使用了以下方法，cloudflared tunnel 在中国大陆使用的稳定性存在问题，并不建议在中国大陆使用
+
 ### 1.使用 http2
 Cloudflared tunnel 默认使用QUIC(基于UDP),在国内使用会出现连接失败
 
